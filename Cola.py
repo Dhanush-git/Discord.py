@@ -1,5 +1,4 @@
 import discord
-import my_token
 import json
 from discord.ext import commands
 
@@ -84,4 +83,4 @@ async def reactrole(ctx, emoji, role: discord.Role, *, message):
     with open('reactrole.json', 'w') as f:
         json.dump(data, f, indent=4)
 
-client.run(my_token.secret_token)
+client.run("YOUR TOKEN HERE")
