@@ -1,5 +1,4 @@
 import discord
-import my_token
 from discord.ext import commands
 
 import giphy_client
@@ -49,4 +48,4 @@ async def gif(ctx,*,q="random"):
         print("Exception when calling DefaultApi->gifs_search_get: %s\n" % e)
    
 
-client.run(my_token.secret_token)
+client.run('secret_token')
