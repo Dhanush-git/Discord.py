@@ -1,5 +1,4 @@
 import discord
-import my_token
 import json
 from discord.ext import commands
 
@@ -37,4 +36,4 @@ async def reactrole(ctx):
 
    
 
-client.run(my_token.secret_token)
+client.run('secret_token')
