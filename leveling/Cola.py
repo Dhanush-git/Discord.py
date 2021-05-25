@@ -1,5 +1,4 @@
 import discord
-import my_token
 from discord.ext import commands
 
 import sqlite3
@@ -90,4 +89,4 @@ async def xp(ctx, user: discord.User = None):
         await ctx.channel.send("DataBase not initialized")
 
 
-client.run(my_token.secret_token)
+client.run('YOUR_TOKEN_HERE')
