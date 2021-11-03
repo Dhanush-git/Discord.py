@@ -7,7 +7,6 @@ client = commands.Bot(command_prefix=".")
 
 @client.event
 async def on_ready():
-    print('ready')
     print(f"we have logged in as {client.user}")
 
 
