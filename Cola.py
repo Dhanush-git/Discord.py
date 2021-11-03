@@ -22,4 +22,4 @@ async def ping(ctx):
 
 
 
-client.run(YOUR TOKEN HERE)
+client.run('YOUR TOKEN HERE')
