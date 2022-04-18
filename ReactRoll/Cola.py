@@ -20,9 +20,11 @@ async def on_raw_reaction_add(payload):
         with open('reactrole.json') as react_file:
             data = json.load(react_file)
             for x in data:
-                if x['emoji'] == payload.emoji.name:
-                    role = discord.utils.get(client.get_guild(
-                        payload.guild_id).roles, id=x['role_id'])
+                if x['message_id'] == payload.message_id:  # checks if the found member id is equal to the id from the
+                                                           # message where a reaction was added
+                    if x['emoji'] == payload.emoji.name:  # checks if the found emoji is equal to the reacted emoji
+                        role = discord.utils.get(client.get_guild(
+                            payload.guild_id).roles, id=x['role_id'])
 
                     await payload.member.add_roles(role)
 
@@ -33,9 +35,12 @@ async def on_raw_reaction_remove(payload):
     with open('reactrole.json') as react_file:
         data = json.load(react_file)
         for x in data:
-            if x['emoji'] == payload.emoji.name:
-                role = discord.utils.get(client.get_guild(
-                    payload.guild_id).roles, id=x['role_id'])
+
+            if x['message_id'] == payload.message_id:  # checks if the found member id is equal to the id from the
+                                                        # message where a reaction was added
+                if x['emoji'] == payload.emoji.name:  # checks if the found emoji is equal to the reacted emoji
+                    role = discord.utils.get(client.get_guild(
+                        payload.guild_id).roles, id=x['role_id'])
 
                 
                 await client.get_guild(payload.guild_id).get_member(payload.user_id).remove_roles(role)
